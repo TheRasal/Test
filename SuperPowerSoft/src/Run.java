@@ -21,7 +21,7 @@ public class Run {
 
                 while (sc.hasNext()) {
                     String line=sc.nextLine();
-                    if ((regex(line))||line.equals(" ")) {
+                    if ((!regex(line))||line.equals(" ")) {
                         System.out.println("Проверьте данные");
                         System.exit(0);
                     }
