@@ -20,9 +20,9 @@ public class Run {
             Scanner sc = new Scanner(new File(input));
 
                 while (sc.hasNext()) {
-                    if (!regex(sc.nextLine())) {
+                     if ((!regex(sc.nextLine()))||sc.nextLine().equals(" ")) {
                         System.out.println("Проверьте данные");
-                        break;
+                        System.exit(0);
                     }
                     String times[] = sc.nextLine().split(" ");
                     shedules.add(new Shedule(times[0], times[1]));
