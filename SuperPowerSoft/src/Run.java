@@ -20,13 +20,16 @@ public class Run {
             Scanner sc = new Scanner(new File(input));
 
                 while (sc.hasNext()) {
-                     if ((!regex(sc.nextLine()))||sc.nextLine().equals(" ")) {
+                    String line=sc.nextLine();
+                    if ((regex(line))||line.equals(" ")) {
                         System.out.println("Проверьте данные");
                         System.exit(0);
                     }
-                    String times[] = sc.nextLine().split(" ");
+                    String times[] = line.split(" ");
+
                     shedules.add(new Shedule(times[0], times[1]));
                 }
+
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
