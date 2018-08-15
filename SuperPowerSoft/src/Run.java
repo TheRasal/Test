@@ -18,10 +18,12 @@ public class Run {
         List<Shedule> shedules = new ArrayList<>();
         try {
             Scanner sc = new Scanner(new File(input));
-            if (!regex(sc.nextLine())) {
-                return null;
-            }
+
                 while (sc.hasNext()) {
+                    if (!regex(sc.nextLine())) {
+                        System.out.println("Проверьте данные");
+                        break;
+                    }
                     String times[] = sc.nextLine().split(" ");
                     shedules.add(new Shedule(times[0], times[1]));
                 }
